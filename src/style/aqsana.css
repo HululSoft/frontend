@@ -1,0 +1,59 @@
+html, body {
+    height: 100%;
+    margin: 0;
+  }
+  
+  .mainContainer {
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center;    /* Vertical centering */
+    flex-direction: column; /* Align items vertically */
+    height: 100%;
+    width: 100%;
+    background-color: #ADD8E6;          /* Full viewport height */
+  }
+  
+  .formContainer {
+    width: 100%;
+    background-color: #3ecbb8;
+    padding: 20px;
+    border-radius: 10px;
+    text-align: center;
+    display: flex;
+    flex-direction: row;
+    justify-content: center; /* Horizontal centering */
+    align-items: center;
+    gap: 100px;
+  }
+
+  .poster-container {
+    position: relative; /* Position relative to the container */
+    width: 300px; /* Set a specific width or use 100% for responsive */
+    height: auto; /* Height will adjust based on the image */
+    display: none;
+  }
+  
+  .poster-background {
+    width: 300px;
+    height: 300px;
+  }
+  
+  .overlay-text {
+    position: absolute; /* Position absolutely within the container */
+    top: 50%; /* Center vertically */
+    left: 50%; /* Center horizontally */
+    transform: translate(-50%, -50%); /* Adjust for text size */
+    color: #FFFFFF; /* Text color */
+    font-size: 20px; /* Text size */
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional shadow for better visibility */
+  }
+
+  .israa_aya{
+    color: #FFEB3B;
+    margin: 50px;
+    font-size: xx-large;
+  }
+  
+  .persons{
+    color: #ffffff
+  }
