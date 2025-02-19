@@ -1,88 +1,235 @@
-import React, { useState, useRef  } from 'react'
-import '../../style/aqsana.css';
-import imageFile from './aqsa.png';
+import React, { useState, useRef } from "react";
+import "../../style/aqsana.css";
+import template from "./template.jpg";
+import calendarIcon from "./calendar.png";
+import timeIcon from "./clock.png";
+import placeIcon from "./location-pin.png";
 import html2canvas from "html2canvas";
 
 export default function Poster() {
-    const [selectedDays, setSelectedDays] = useState([]);
-    const [selectedRegistrars, setSelectedRegistrars] = useState([]);
-    const registars = [
-        {id : 1, name : "عمر بدران", phone : "05888888888"},
-        {id : 2, name : "محمد عاهد", phone : "0599999"},
-        {id : 3, name : "ام عمير", phone : "0577777"},
-    ]
-    const weekdays = ['الأحد', 'الإثنين', 'الثلاثاء', 'الأربعاء', 'الخميس', 'الجمعة', 'السبت'];
-    const posterRef = useRef(null)
-    const handleRegistrarsChange = (event) => {
-        if (event.target.value) {
-          setSelectedRegistrars([...selectedRegistrars,event.target.value]);
-        }
-    };
-    
-    const handleDayChange = (event) => {
-        if (event.target.value) {
-            setSelectedDays([...selectedDays,event.target.value]);
-        }
-    };
+  const [selectedDay, setSelectedDay] = useState("");
+  const [selectedRegistrars, setSelectedRegistrars] = useState([]);
+  const [departureLocation, setDepartureLocation] = useState("");
+  const [selectedCity, setSelectedCity] = useState("");
+  const [selectedPrayer, setSelectedPrayer] = useState("");
+  const [selectedDate, setSelectedDate] = useState("");
+  const [selectedTime, setSelectedTime] = useState("");
+  const registars = [
+    { id: 1, name: "عمر بدران", phone: "050-3399953" },
+    { id: 2, name: "محمد عاهد", phone: "0599999" },
+    { id: 3, name: "ام عمير", phone: "0577777" },
+  ];
+  const departureLocations = [
+    "محطة الوقود - دار ابو ياسين",
+    "مسجد المرجة الشمالية",
+    "مسجد إبثان",
+    "البير - المسجد القديم بئر السكة",
+  ];
+  const cities = ["الطيبة", "قلنسوة", "باقة الغربية", "جت", "زيمر"];
+  const prayers = [
+    "صلاة الفجر",
+    "صلاة الفجر والمكوث الى الشروق",
+    "صلاة الجمعة",
+    "صلاة الظهر والعصر جمعا",
+    "صلاة المغرب والعشاء جمعا",
+  ];
+  const posterRef = useRef(null);
+  const handleRegistrarsChange = (event) => {
+    if (event.target.value) {
+      setSelectedRegistrars([...selectedRegistrars, event.target.value]);
+    }
+  };
+  const handleDepartureLocationChange = (event) => {
+    setDepartureLocation(event.target.value);
+  };
+  const handleCityChange = (event) => {
+    setSelectedCity(event.target.value);
+  };
+  const handlePrayerChange = (event) => {
+    setSelectedPrayer(event.target.value);
+  };
+  const handleTimeChange = (event) => {
+    setSelectedTime(event.target.value); // Store the selected time
+  };
+  const handleDateChange = (event) => {
+    const date_list = event.target.value.split("-");
+    const date_format = new Date(event.target.value);
+    const options = { weekday: "long" }; // Long format for full day name
+    const dayOfWeek = date_format.toLocaleDateString("ar-EG", options); // Adjust locale as needed
+    let day = date_list[2];
+    let month = date_list[1];
+    if (day[0] === "0") day = day[1];
+    if (month[0] === "0") month = month[1];
+    setSelectedDate(`${day}.${month}`);
+    setSelectedDay(dayOfWeek);
+  };
+  const createPoster = () => {
+    if (
+      selectedRegistrars.length === 0 ||
+      selectedDay.length === 0 ||
+      !departureLocation ||
+      !selectedPrayer
+    ) {
+      alert("عبئ جميع التفاصيل أولا!");
+      return;
+    }
+    posterRef.current.style.display = "block";
+    console.log(
+      selectedCity,
+      selectedRegistrars,
+      selectedDay,
+      departureLocation,
+      selectedPrayer,
+      selectedDate
+    );
+  };
 
-    const createPoster = ()=>{
-        posterRef.current.style.display = 'block'
+  const downloadPoster = () => {
+    const input = posterRef.current;
+    if (
+      selectedRegistrars.length === 0 ||
+      selectedDay.length === 0 ||
+      !departureLocation ||
+      !selectedPrayer
+    ) {
+      alert("عبئ جميع التفاصيل أولا!");
+      return;
     }
 
-    const downloadPoster = ()=>{
-        const input = posterRef.current;
-        
-        html2canvas(input).then((canvas) => {
-            const link = document.createElement("a"); // Create an anchor element
-            link.download = "screenshot.png"; // Specify the file name
-            link.href = canvas.toDataURL("image/png"); // Convert canvas to PNG data URL
-            link.click(); // Trigger the download
-        });
-    }
+    html2canvas(input).then((canvas) => {
+      const link = document.createElement("a"); // Create an anchor element
+      link.download = "screenshot.png"; // Specify the file name
+      link.href = canvas.toDataURL("image/png"); // Convert canvas to PNG data URL
+      link.click(); // Trigger the download
+    });
+  };
 
-    return (
-        <div className='mainContainer' dir="rtl">
-            <p className='israa_aya'>سُبْحَانَ الَّذِي أَسْرَىٰ بِعَبْدِهِ لَيْلًا مِّنَ الْمَسْجِدِ الْحَرَامِ إِلَى الْمَسْجِدِ الْأَقْصَى الَّذِي بَارَكْنَا حَوْلَهُ لِنُرِيَهُ مِنْ آيَاتِنَا ۚ إِنَّهُ هُوَ السَّمِيعُ الْبَصِيرُ</p>
-            <div className='formContainer'>
-                <div className='registars'>
-                    <label>أختر أسماء المسجلين</label>
-                        {
-                            registars.map((person)=>(
-                                <div>
-                                    <input
-                                        class="form-check-input"
-                                        type="checkbox"
-                                        value = {person.name}
-                                        onChange={handleRegistrarsChange}
-                                    />
-                                    <label className='persons'>{person.name}</label>
-                                </div>
-                            ))
-                        }
-                </div>
-                <div className='days'>
-                    <label>أختر يوم الإنطلاق</label>
-                    {
-                        weekdays.map((day)=>(
-                            <div>
-                                <input
-                                    type="checkbox"
-                                    checked={day.checked}
-                                    value = {day}
-                                    onChange={handleDayChange}
-                                />
-                                <label>{day}</label>
-                            </div>
-                        ))
-                    }
-                </div>
-                <button onClick={createPoster}>create poster</button>
-            </div>
-            <div className="poster-container" ref={posterRef}>
-                <img className="poster-background" src={imageFile} alt="poster background"/>
-            </div>
-            <button onClick={downloadPoster}>download poster</button>
-            <script src="./js/inForm.js?v=1.0.1"></script>
+  return (
+    <div className="mainContainer" dir="rtl">
+      <p className="israa_aya">
+        سُبْحَانَ الَّذِي أَسْرَىٰ بِعَبْدِهِ لَيْلًا مِّنَ الْمَسْجِدِ
+        الْحَرَامِ إِلَى الْمَسْجِدِ الْأَقْصَى الَّذِي بَارَكْنَا حَوْلَهُ
+        لِنُرِيَهُ مِنْ آيَاتِنَا ۚ إِنَّهُ هُوَ السَّمِيعُ الْبَصِيرُ
+      </p>
+      <div className="formContainer">
+        <div className="city">
+          <label>أختر المدينة</label>
+          <div>
+            {cities.map((city, index) => (
+              <div key={index}>
+                <input
+                  type="radio"
+                  id={city}
+                  name="city"
+                  value={city}
+                  checked={selectedCity === city}
+                  onChange={handleCityChange}
+                />
+                <label htmlFor={city}>{city}</label>
+              </div>
+            ))}
+          </div>
         </div>
-    )
+        <div className="registars">
+          <label>أختر أسماء المسجلين</label>
+          {registars.map((person) => (
+            <div>
+              <input
+                className="form-check-input"
+                type="checkbox"
+                value={person.name}
+                onChange={handleRegistrarsChange}
+              />
+              <label className="persons">{person.name}</label>
+            </div>
+          ))}
+        </div>
+        <div className="departureLocation">
+          <label>أختر نقطة الانطلاق</label>
+          <div>
+            {departureLocations.map((location, index) => (
+              <div key={index}>
+                <input
+                  type="radio"
+                  id={location}
+                  name="departureLocation"
+                  value={location}
+                  checked={departureLocation === location}
+                  onChange={handleDepartureLocationChange}
+                />
+                <label htmlFor={location}>{location}</label>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="prayer">
+          <label>أختر الصلاة</label>
+          <div>
+            {prayers.map((prayer, index) => (
+              <div key={index}>
+                <input
+                  type="radio"
+                  id={prayer}
+                  name="prayer"
+                  value={prayer}
+                  checked={selectedPrayer === prayer}
+                  onChange={handlePrayerChange}
+                />
+                <label htmlFor={prayer}>{prayer}</label>
+              </div>
+            ))}
+          </div>
+        </div>
+        <div className="date-picker">
+          <label htmlFor="date">اختر اليوم والتاريخ</label>
+          <input type="date" id="date" onChange={handleDateChange} />
+        </div>
+        <div className="time-picker">
+          <label htmlFor="time">اختر ساعة الإنطلاق</label>
+          <input type="time" value={selectedTime} onChange={handleTimeChange} />
+        </div>
+        <button onClick={createPoster}>create poster</button>
+      </div>
+      <div
+        className="poster-container"
+        ref={posterRef}
+        style={{ display: "none" }}
+      >
+        <img
+          className="poster-background"
+          src={template}
+          alt="poster background"
+        />
+        <div className="overlay-container">
+          <div className="upper-container">
+            <div className="city-text">
+              أهلنا الكرام في {selectedCity} ندعوكم
+            </div>
+          </div>
+          <div className="body-container">
+            <img
+              className="calendar-icon"
+              src={calendarIcon}
+              alt="calendar icon"
+            />
+            <img className="clock-icon" src={timeIcon} alt="clock icon" />
+            <img className="place-icon" src={placeIcon} alt="place icon" />
+            <div className="prayer-text">لأداء {selectedPrayer}</div>
+            <div className="date-text">{selectedDate}</div>
+            <div className="day-text">{selectedDay}</div>
+            <div className="time-text">{selectedTime}</div>
+            <div className="place-text">{departureLocation}</div>
+          </div>
+          <div className="footer-container">
+            <div className="registarAName-text">{registars[0].name}</div>
+            <div className="registarAPhone-text">{registars[0].phone}</div>
+            <div className="registarB-text">{registars[1].name}</div>
+            <div className="registarC-text">{registars[2].name}</div>
+          </div>
+        </div>
+      </div>
+      <button onClick={downloadPoster}>download poster</button>
+      <script src="./js/inForm.js?v=1.0.1"></script>
+    </div>
+  );
 }

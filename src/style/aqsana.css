@@ -1,59 +1,348 @@
-html, body {
-    height: 100%;
-    margin: 0;
-  }
-  
-  .mainContainer {
-    display: flex;
-    justify-content: center; /* Horizontal centering */
-    align-items: center;    /* Vertical centering */
-    flex-direction: column; /* Align items vertically */
-    height: 100%;
-    width: 100%;
-    background-color: #ADD8E6;          /* Full viewport height */
-  }
-  
-  .formContainer {
-    width: 100%;
-    background-color: #3ecbb8;
-    padding: 20px;
-    border-radius: 10px;
-    text-align: center;
-    display: flex;
-    flex-direction: row;
-    justify-content: center; /* Horizontal centering */
-    align-items: center;
-    gap: 100px;
-  }
+html,
+body {
+  margin: 0;
+  font-family: "Arial", sans-serif;
+  background: linear-gradient(to bottom right, #f0f9ff, #cbebff);
+}
 
-  .poster-container {
-    position: relative; /* Position relative to the container */
-    width: 300px; /* Set a specific width or use 100% for responsive */
-    height: auto; /* Height will adjust based on the image */
-    display: none;
-  }
-  
-  .poster-background {
-    width: 300px;
-    height: 300px;
-  }
-  
-  .overlay-text {
-    position: absolute; /* Position absolutely within the container */
-    top: 50%; /* Center vertically */
-    left: 50%; /* Center horizontally */
-    transform: translate(-50%, -50%); /* Adjust for text size */
-    color: #FFFFFF; /* Text color */
-    font-size: 20px; /* Text size */
-    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7); /* Optional shadow for better visibility */
-  }
+.mainContainer {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
 
-  .israa_aya{
-    color: #FFEB3B;
-    margin: 50px;
-    font-size: xx-large;
-  }
-  
-  .persons{
-    color: #ffffff
-  }
+.israa_aya {
+  color: #00796b;
+  margin: 20px 0;
+  font-size: 1.8em;
+  font-weight: bold;
+  text-align: center;
+}
+
+.formContainer {
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 30px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 15px;
+  margin: 20px;
+}
+
+formContainer label,
+.formContainer input {
+  margin-bottom: 10px;
+  font-size: 1.1em;
+}
+
+.registars,
+.days {
+  margin-top: 20px;
+  background-color: #e0f7fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.registars label,
+.days label {
+  font-weight: bold;
+}
+
+.persons {
+  color: #333;
+}
+
+button {
+  background-color: #009688;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 1.1em;
+  margin-top: 15px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+button:hover {
+  background-color: #00796b;
+}
+
+.departureLocation {
+  margin-top: 20px;
+  background-color: #e0f7fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.departureLocation label,
+.departureLocation select {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.city {
+  margin-top: 20px;
+  background-color: #e0f7fa;
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.city label,
+.city select {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+}
+
+.prayers {
+  margin-top: 20px;
+  background-color: #e0f7fa; /* Same light background as other sections */
+  padding: 15px;
+  border-radius: 8px;
+}
+
+.prayers label {
+  font-size: 1.1em; /* Consistent label size */
+  margin-bottom: 10px;
+  display: block; /* Stacks label and options vertically */
+}
+
+.prayers input[type="checkbox"] {
+  margin-right: 10px; /* Space between checkbox and label */
+}
+
+.date-picker {
+  margin-top: 20px;
+  padding: 10px;
+  background-color: #e0f7fa;
+  border-radius: 8px;
+}
+
+.date-picker label {
+  display: block;
+  margin-bottom: 5px;
+  font-size: 1.1em;
+}
+
+.date-picker input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  width: 100%; /* Full width */
+}
+
+.poster-container {
+  position: relative; 
+  width: 650px; /* Match to desired poster size */
+  height: 790px; /* Adjust as needed */
+  overflow: hidden; /* To ensure no overflow of child elements */
+}
+
+.poster-background {
+  width: 100%; /* Ensures it fills the container */
+  height: 100%; /* Maintains aspect ratio */
+  position: absolute; /* Place behind other content */
+  top: 0;
+  left: 0;
+  z-index: 1; /* Layering, background being the base */
+}
+
+.overlay-container {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.calendar-icon {
+  width: 50px;
+  height: 50px;
+  /* position: absolute;  */
+  /* top: 255px;
+  left: 510px; */
+  z-index: 3;
+}
+
+.clock-icon {
+  width: 50px;
+  height: 50px;
+  /* position: absolute; 
+  top: 255px;
+  left: 290px; */
+  z-index: 3;
+}
+
+.place-icon {
+  width: 50px;
+  height: 50px;
+  /* position: absolute; 
+  top: 255px;
+  left: 65px; */
+  z-index: 3;
+}
+
+.city-text{
+  /* position: absolute; */
+  font-family: 'Arial', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  /* top: 135px; */
+  font-size: 20px;
+  z-index: 3;
+  text-align: center;
+  height: inherit;
+  margin-top: 50%;
+  width: 100%;
+}
+
+.prayer-text{
+  /* position: absolute; */
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #fff;
+  /* top: 220px; */
+  font-size: 20px;
+  z-index: 3;
+  text-align: center;
+  width: 100%;
+}
+
+.date-text{
+  position: absolute;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #000;
+  top: 310px;
+  font-size: 20px;
+  z-index: 3;
+  text-align: center;
+  width: 30%;
+}
+
+.day-text{
+  position: absolute;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #000;
+  top: 335px;
+  font-size: 20px;
+  z-index: 3;
+  text-align: center;
+  width: 30%;
+}
+
+.time-text{
+  position: absolute;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #000;
+  top: 310px;
+  left: 222px;
+  font-size: 20px;
+  z-index: 3;
+  text-align: center;
+  width: 30%;
+}
+
+.place-text{
+  position: absolute;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #000;
+  top: 310px;
+  left: 45px;
+  font-size: 20px;
+  line-height: 0.85;
+  z-index: 3;
+  text-align: center;
+  width: 15%;
+}
+
+.registarAName-text{
+  position: absolute;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: rgb(184, 184, 47);
+  top: 520px;
+  right: 45px;
+  font-size: 20px;
+  line-height: 0.85;
+  z-index: 3;
+  text-align: center;
+  width: 15%;
+}
+.registarAPhone-text{
+  position: absolute;
+  font-family: 'Arial', sans-serif;
+  color: rgb(184, 184, 47);
+  top: 550px;
+  right: 30px;
+  font-size: 20px;
+  line-height: 0.85;
+  z-index: 3;
+  text-align: center;
+  width: 20%;
+}
+.registarB-text{
+  position: absolute;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #000;
+  top: 310px;
+  left: 45px;
+  font-size: 20px;
+  line-height: 0.85;
+  z-index: 3;
+  text-align: center;
+  width: 15%;
+}
+.registarC-text{
+  position: absolute;
+  font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  color: #000;
+  top: 310px;
+  left: 45px;
+  font-size: 20px;
+  line-height: 0.85;
+  z-index: 3;
+  text-align: center;
+  width: 15%;
+}
+
+.upper-container{
+  width: 100%;
+  height: 33%;
+  margin: 10px
+}
+.body-container{
+  width: 100%;
+  height: 33%;
+  margin: 10px
+
+}
+.footer-container{
+  width: 100%;
+  height: 33%;
+}
