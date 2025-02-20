@@ -17,6 +17,7 @@ root.render(
         <Route exact path="/ikram" element={<Ikram/>}/>
         <Route exact path="/aqsana" element={<Main/>}/>
         <Route exact path="/aqsana/poster" element={<Poster/>}/>
+        <div>Hello</div>
       </Routes>
     </Router>
   </React.StrictMode>
