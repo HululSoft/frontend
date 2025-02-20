@@ -16,8 +16,8 @@ export default function Poster() {
   const [selectedTime, setSelectedTime] = useState("");
   const registars = [
     { id: 1, name: "عمر بدران", phone: "050-3399953" },
-    { id: 2, name: "محمد عاهد", phone: "0599999" },
-    { id: 3, name: "ام عمير", phone: "0577777" },
+    { id: 2, name: "محمد عاهد", phone: "052-6442853" },
+    { id: 3, name: "ام عمير", phone: "052-4090001" },
   ];
   const departureLocations = [
     "محطة الوقود - دار ابو ياسين",
@@ -36,7 +36,7 @@ export default function Poster() {
   const posterRef = useRef(null);
   const handleRegistrarsChange = (event) => {
     if (event.target.value) {
-      setSelectedRegistrars([...selectedRegistrars, event.target.value]);
+      setSelectedRegistrars([...selectedRegistrars, registars.find((person) => person.name === event.target.value)]);
     }
   };
   const handleDepartureLocationChange = (event) => {
@@ -205,26 +205,45 @@ export default function Poster() {
             <div className="city-text">
               أهلنا الكرام في {selectedCity} ندعوكم
             </div>
+            <div className="static-text">
+              لشد الرحال إلى المسجد الأقصى المبارك
+            </div>
           </div>
           <div className="body-container">
-            <img
-              className="calendar-icon"
-              src={calendarIcon}
-              alt="calendar icon"
-            />
-            <img className="clock-icon" src={timeIcon} alt="clock icon" />
-            <img className="place-icon" src={placeIcon} alt="place icon" />
-            <div className="prayer-text">لأداء {selectedPrayer}</div>
-            <div className="date-text">{selectedDate}</div>
-            <div className="day-text">{selectedDay}</div>
-            <div className="time-text">{selectedTime}</div>
-            <div className="place-text">{departureLocation}</div>
+            <div className="title-container">
+              <div className="prayer-text">لأداء {selectedPrayer}</div>
+            </div>
+              <div className="details-container">
+                <div className="date-container">
+                  <img className="calendar-icon" src={calendarIcon} alt="calendar icon"/>
+                  <div className="date-text">{selectedDate}</div>
+                  <div className="day-text">{selectedDay}</div>
+                </div>
+                <div className="time-container">
+                  <img className="clock-icon" src={timeIcon} alt="clock icon" />
+                  <div className="time-text">{selectedTime}</div>
+                </div>
+                <div className="place-container">
+                  <img className="place-icon" src={placeIcon} alt="place icon" />
+                  <div className="place-text">{departureLocation}</div>
+                </div>
+            </div>
           </div>
           <div className="footer-container">
-            <div className="registarAName-text">{registars[0].name}</div>
-            <div className="registarAPhone-text">{registars[0].phone}</div>
-            <div className="registarB-text">{registars[1].name}</div>
-            <div className="registarC-text">{registars[2].name}</div>
+              <div className="footer-text-info">
+                بإمكانكم المساهمة
+                <br />
+                في كفالة الحافلات
+              </div>
+              <div className="footer-text-register">للحجز:</div>
+              <div className="registars-container">
+                {selectedRegistrars.map((item)=>(
+                  <div className="registar-container">
+                    <div className={`registar-${item.id}-name`}>{item.name}</div>
+                    <div className={`registar-${item.id}-phone`}>{item.phone}</div>
+                  </div>
+                ))}
+              </div>
           </div>
         </div>
       </div>

@@ -1,10 +1,11 @@
-html,
-body {
+/* Base styles */
+html, body {
   margin: 0;
   font-family: "Arial", sans-serif;
   background: linear-gradient(to bottom right, #f0f9ff, #cbebff);
 }
 
+/* Layout containers */
 .mainContainer {
   display: flex;
   flex-direction: column;
@@ -12,14 +13,6 @@ body {
   align-items: center;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-}
-
-.israa_aya {
-  color: #00796b;
-  margin: 20px 0;
-  font-size: 1.8em;
-  font-weight: bold;
-  text-align: center;
 }
 
 .formContainer {
@@ -34,29 +27,56 @@ body {
   margin: 20px;
 }
 
-formContainer label,
-.formContainer input {
-  margin-bottom: 10px;
-  font-size: 1.1em;
+/* Typography */
+.israa_aya {
+  color: #00796b;
+  margin: 20px 0;
+  font-size: 1.8em;
+  font-weight: bold;
+  text-align: center;
 }
 
+/* Form elements */
+.formContainer label,
+.formContainer input,
+.departureLocation label,
+.departureLocation select,
+.city label,
+.city select,
+.prayers label,
+.date-picker label {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+/* Make all input backgrounds the same */
+select, 
+.date-picker input,
+.formContainer input {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background-color: #e0f7fa;
+}
+
+.date-picker input {
+  width: 100%;
+}
+
+/* Common section styles */
 .registars,
-.days {
+.days,
+.departureLocation,
+.city,
+.prayers,
+.date-picker {
   margin-top: 20px;
   background-color: #e0f7fa;
   padding: 15px;
   border-radius: 8px;
 }
 
-.registars label,
-.days label {
-  font-weight: bold;
-}
-
-.persons {
-  color: #333;
-}
-
+/* Button styles */
 button {
   background-color: #009688;
   color: #fff;
@@ -73,95 +93,26 @@ button:hover {
   background-color: #00796b;
 }
 
-.departureLocation {
-  margin-top: 20px;
-  background-color: #e0f7fa;
-  padding: 15px;
-  border-radius: 8px;
-}
-
-.departureLocation label,
-.departureLocation select {
-  font-size: 1.1em;
-  margin-bottom: 10px;
-}
-
-select {
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-}
-
-.city {
-  margin-top: 20px;
-  background-color: #e0f7fa;
-  padding: 15px;
-  border-radius: 8px;
-}
-
-.city label,
-.city select {
-  font-size: 1.1em;
-  margin-bottom: 10px;
-}
-
-select {
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-}
-
-.prayers {
-  margin-top: 20px;
-  background-color: #e0f7fa; /* Same light background as other sections */
-  padding: 15px;
-  border-radius: 8px;
-}
-
-.prayers label {
-  font-size: 1.1em; /* Consistent label size */
-  margin-bottom: 10px;
-  display: block; /* Stacks label and options vertically */
-}
-
+/* Checkbox styles */
 .prayers input[type="checkbox"] {
-  margin-right: 10px; /* Space between checkbox and label */
+  margin-right: 10px;
 }
 
-.date-picker {
-  margin-top: 20px;
-  padding: 10px;
-  background-color: #e0f7fa;
-  border-radius: 8px;
-}
-
-.date-picker label {
-  display: block;
-  margin-bottom: 5px;
-  font-size: 1.1em;
-}
-
-.date-picker input {
-  padding: 5px;
-  border-radius: 5px;
-  border: 1px solid #ddd;
-  width: 100%; /* Full width */
-}
-
+/* Poster styles */
 .poster-container {
   position: relative; 
-  width: 650px; /* Match to desired poster size */
-  height: 790px; /* Adjust as needed */
-  overflow: hidden; /* To ensure no overflow of child elements */
+  width: 650px;
+  height: 790px;
+  overflow: hidden;
 }
 
 .poster-background {
-  width: 100%; /* Ensures it fills the container */
-  height: 100%; /* Maintains aspect ratio */
-  position: absolute; /* Place behind other content */
+  width: 100%;
+  height: 100%;
+  position: absolute;
   top: 0;
   left: 0;
-  z-index: 1; /* Layering, background being the base */
+  z-index: 1;
 }
 
 .overlay-container {
@@ -175,174 +126,125 @@ select {
   align-items: center;
 }
 
-.calendar-icon {
-  width: 50px;
-  height: 50px;
-  /* position: absolute;  */
-  /* top: 255px;
-  left: 510px; */
-  z-index: 3;
-}
-
-.clock-icon {
-  width: 50px;
-  height: 50px;
-  /* position: absolute; 
-  top: 255px;
-  left: 290px; */
-  z-index: 3;
-}
-
+/* Icon styles */
+.calendar-icon,
+.clock-icon,
 .place-icon {
   width: 50px;
   height: 50px;
-  /* position: absolute; 
-  top: 255px;
-  left: 65px; */
   z-index: 3;
 }
 
-.city-text{
-  /* position: absolute; */
+/* Text styles */
+.city-text,
+.static-text,
+.prayer-text,
+.date-text,
+.day-text,
+.time-text,
+.place-text,
+.footer-text-info,
+.footer-text-register {
   font-family: 'Arial', sans-serif;
+  font-weight: bold;
+  z-index: 3;
+  text-align: center;
+}
+
+.city-text {
   font-size: 24px;
-  font-weight: bold;
-  /* top: 135px; */
-  font-size: 20px;
-  z-index: 3;
-  text-align: center;
-  height: inherit;
-  margin-top: 50%;
-  width: 100%;
+  margin-top: 170px;
 }
 
-.prayer-text{
-  /* position: absolute; */
-  font-family: 'Arial', sans-serif;
-  font-weight: bold;
+.static-text {
+  font-size: 20px;
+  margin-top: 5px;
+}
+
+.prayer-text {
   color: #fff;
-  /* top: 220px; */
   font-size: 20px;
-  z-index: 3;
-  text-align: center;
   width: 100%;
 }
 
-.date-text{
-  position: absolute;
-  font-family: 'Arial', sans-serif;
-  font-weight: bold;
-  color: #000;
-  top: 310px;
+.date-text,
+.day-text,
+.time-text {
   font-size: 20px;
-  z-index: 3;
-  text-align: center;
-  width: 30%;
 }
 
-.day-text{
-  position: absolute;
-  font-family: 'Arial', sans-serif;
-  font-weight: bold;
-  color: #000;
-  top: 335px;
+.place-text {
   font-size: 20px;
-  z-index: 3;
-  text-align: center;
-  width: 30%;
+  line-height: 1;
+  width: 50%;
 }
 
-.time-text{
-  position: absolute;
-  font-family: 'Arial', sans-serif;
-  font-weight: bold;
-  color: #000;
-  top: 310px;
-  left: 222px;
-  font-size: 20px;
-  z-index: 3;
-  text-align: center;
-  width: 30%;
-}
-
-.place-text{
-  position: absolute;
-  font-family: 'Arial', sans-serif;
-  font-weight: bold;
-  color: #000;
-  top: 310px;
-  left: 45px;
-  font-size: 20px;
-  line-height: 0.85;
-  z-index: 3;
-  text-align: center;
-  width: 15%;
-}
-
-.registarAName-text{
-  position: absolute;
-  font-family: 'Arial', sans-serif;
-  font-weight: bold;
-  color: rgb(184, 184, 47);
-  top: 520px;
-  right: 45px;
-  font-size: 20px;
-  line-height: 0.85;
-  z-index: 3;
-  text-align: center;
-  width: 15%;
-}
-.registarAPhone-text{
-  position: absolute;
-  font-family: 'Arial', sans-serif;
-  color: rgb(184, 184, 47);
-  top: 550px;
-  right: 30px;
-  font-size: 20px;
-  line-height: 0.85;
-  z-index: 3;
-  text-align: center;
-  width: 20%;
-}
-.registarB-text{
-  position: absolute;
-  font-family: 'Arial', sans-serif;
-  font-weight: bold;
-  color: #000;
-  top: 310px;
-  left: 45px;
-  font-size: 20px;
-  line-height: 0.85;
-  z-index: 3;
-  text-align: center;
-  width: 15%;
-}
-.registarC-text{
-  position: absolute;
-  font-family: 'Arial', sans-serif;
-  font-weight: bold;
-  color: #000;
-  top: 310px;
-  left: 45px;
-  font-size: 20px;
-  line-height: 0.85;
-  z-index: 3;
-  text-align: center;
-  width: 15%;
-}
-
-.upper-container{
+/* Container styles */
+.upper-container,
+.body-container,
+.footer-container {
   width: 100%;
   height: 33%;
-  margin: 10px
+  display: flex;
+  flex-direction: column;
+  align-items: center;
 }
-.body-container{
-  width: 100%;
-  height: 33%;
-  margin: 10px
 
+.body-container {
+  background-color: rgba(49, 49, 53, 0.53);
+  border-radius: 10px;
 }
-.footer-container{
+
+.title-container {
   width: 100%;
-  height: 33%;
+  background-color: #000;
+  padding: 5px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+}
+
+.details-container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  align-items: center;
+}
+
+.date-container,
+.time-container,
+.place-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+}
+
+.footer-container {
+  gap: 20px;
+  color: yellow;
+}
+
+.footer-text-info {
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+.footer-text-register {
+  font-size: 25px;
+  color: white;
+  margin-top: 40px;
+}
+
+.registars-container {
+  width: 100%;
+  height: 100vh;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+  justify-content: center;
+  align-items: center;
+  font-family: 'Arial', sans-serif;
+  font-size: 20px;
+  z-index: 3;
+  text-align: center;
 }
