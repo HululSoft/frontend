@@ -35,8 +35,11 @@ export default function Poster() {
   ];
   const posterRef = useRef(null);
   const handleRegistrarsChange = (event) => {
-    if (event.target.value) {
+    if (selectedRegistrars.find(registar => registar.name === event.target.value) == undefined) {
       setSelectedRegistrars([...selectedRegistrars, registars.find((person) => person.name === event.target.value)]);
+    }
+    else {
+      setSelectedRegistrars(selectedRegistrars.filter(registar => registar.name !== event.target.value));
     }
   };
   const handleDepartureLocationChange = (event) => {
@@ -74,14 +77,6 @@ export default function Poster() {
       return;
     }
     posterRef.current.style.display = "block";
-    console.log(
-      selectedCity,
-      selectedRegistrars,
-      selectedDay,
-      departureLocation,
-      selectedPrayer,
-      selectedDate
-    );
   };
 
   const downloadPoster = () => {
@@ -162,7 +157,7 @@ export default function Poster() {
             ))}
           </div>
         </div>
-        <div className="prayer">
+        <div className="prayers">
           <label>أختر الصلاة</label>
           <div>
             {prayers.map((prayer, index) => (

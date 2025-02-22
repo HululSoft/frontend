@@ -9,16 +9,15 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
-root.render(
-  <React.StrictMode>
-    <Router>
-      <Routes>
-        <Route exact path="/" element={<Home/>}/>
-        <Route exact path="/ikram" element={<Ikram/>}/>
-        <Route exact path="/aqsana" element={<Main/>}/>
-        <Route exact path="/aqsana/poster" element={<Poster/>}/>
-        <div>Hello</div>
-      </Routes>
-    </Router>
-  </React.StrictMode>
+root.render(<Poster/>
+  // <React.StrictMode>
+  //   <Router>
+  //     <Routes>
+  //       <Route path="/" element={<Home/>}/>
+  //       <Route path="/ikram" element={<Ikram/>}/>
+  //       <Route path="/aqsana" element={<Main/>}/>
+  //       <Route path="/aqsana/poster" element={<Poster/>}/>
+  //     </Routes>
+  //   </Router>
+  // </React.StrictMode>
 );
