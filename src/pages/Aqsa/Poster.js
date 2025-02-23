@@ -16,22 +16,22 @@ export default function Poster() {
   const [selectedTime, setSelectedTime] = useState("");
   const registars = [
     { id: 1, name: "عمر بدران", phone: "050-3399953" },
-    { id: 2, name: "محمد عاهد", phone: "052-6442853" },
-    { id: 3, name: "ام عمير", phone: "052-4090001" },
+    { id: 2, name: "محمد (أبو عبيدة)", phone: "052-6442853" },
+    { id: 3, name: "ام طارق", phone: "052-4090001" },
   ];
   const departureLocations = [
-    "محطة الوقود - دار ابو ياسين",
-    "مسجد المرجة الشمالية",
-    "مسجد إبثان",
+    "محطة باصات كافيه",
+    "المضافة",
     "البير - المسجد القديم بئر السكة",
   ];
-  const cities = ["الطيبة", "قلنسوة", "باقة الغربية", "جت", "زيمر"];
+  const cities = ["باقة", "جت", "زيمر"];
   const prayers = [
     "صلاة الفجر",
-    "صلاة الفجر والمكوث الى الشروق",
+    "صلاة العصر والمغرب والعشاء جمعا",
     "صلاة الجمعة",
     "صلاة الظهر والعصر جمعا",
     "صلاة المغرب والعشاء جمعا",
+    "صلاة التراويح"
   ];
   const posterRef = useRef(null);
   const handleRegistrarsChange = (event) => {

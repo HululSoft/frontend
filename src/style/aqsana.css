@@ -1,5 +1,6 @@
 /* Base styles */
-html, body {
+html,
+body {
   margin: 0;
   font-family: "Arial", sans-serif;
   background: linear-gradient(to bottom right, #f0f9ff, #cbebff);
@@ -50,7 +51,7 @@ html, body {
 }
 
 /* Make all input backgrounds the same */
-select, 
+select,
 .date-picker input,
 .formContainer input {
   padding: 5px;
@@ -100,7 +101,7 @@ button:hover {
 
 /* Poster styles */
 .poster-container {
-  position: relative; 
+  position: relative;
   width: 100%;
   max-width: 650px;
   height: auto;
@@ -143,13 +144,14 @@ button:hover {
 .place-text,
 .footer-text-info,
 .footer-text-register {
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   font-weight: bold;
   z-index: 3;
   text-align: center;
 }
 
-.city-text,.static-text {
+.city-text,
+.static-text {
   font-size: 25px;
   margin-top: 25%;
 }
@@ -217,8 +219,8 @@ button:hover {
 }
 
 .footer-container {
-  gap: 20px;
-  color: #DAC467;
+  gap: 10%;
+  color: #dac467;
 }
 
 .footer-text-info {
@@ -239,7 +241,7 @@ button:hover {
   gap: 8%;
   justify-content: center;
   align-items: center;
-  font-family: 'Arial', sans-serif;
+  font-family: "Arial", sans-serif;
   font-size: 20px;
   z-index: 3;
   text-align: center;
@@ -252,7 +254,7 @@ button:hover {
   }
 }
 
-@media screen and (max-width: 480px) {
+@media screen and (max-width: 575px) {
   .mainContainer {
     padding: 10px;
   }
@@ -282,31 +284,22 @@ button:hover {
     padding: 8px 16px;
   }
 
-.calendar-icon,
-.clock-icon,
-.place-icon {
-  width: 30px;
-  height: 30px;
-}
-.city-text,
-.static-text {
-  font-size: 15px;
-}
-
-.prayer-text {
-  font-size: 15px;
-}
-.date-text,
-.day-text,
-.time-text,
-.place-text {
-  font-size: 15px;
-}
-  .registars-container {
-    gap: 2%;
+  .calendar-icon,
+  .clock-icon,
+  .place-icon {
+    width: 30px;
+    height: 30px;
   }
-  .footer-text-info
-  {
+  .city-text,
+  .static-text,
+  .prayer-text,
+  .date-text,
+  .day-text,
+  .time-text,
+  .place-text {
+    font-size: 15px;
+  }
+  .footer-text-info {
     font-size: 15px;
   }
   .footer-text-register {
@@ -314,6 +307,66 @@ button:hover {
   }
   .registars-container {
     font-size: 15px;
-    gap:9%
+    gap: 9%;
   }
-} 
+}
+
+@media screen and (max-width: 375px) {
+  .mainContainer {
+    padding: 10px;
+  }
+
+  .formContainer {
+    padding: 15px;
+    margin: 10px;
+  }
+
+  .israa_aya {
+    font-size: 1em;
+  }
+
+  .formContainer label,
+  .formContainer input,
+  .departureLocation label,
+  .departureLocation select,
+  .city label,
+  .city select,
+  .prayers label,
+  .date-picker label {
+    font-size: 1em;
+  }
+
+  button {
+    font-size: 1em;
+    padding: 8px 16px;
+  }
+
+  .calendar-icon,
+  .clock-icon,
+  .place-icon {
+    width: 20px;
+    height: 20px;
+  }
+  .city-text,
+  .static-text,
+  .prayer-text,
+  .date-text,
+  .day-text,
+  .time-text,
+  .place-text {
+    font-size: 13px;
+  }
+  .footer-container {
+    gap:5%
+  }
+  .footer-text-info {
+    font-size: 12px;
+  }
+  .footer-text-register {
+    font-size: 15px;
+  }
+  .registars-container {
+    font-size: 13px;
+    gap: 5%;
+  }
+}
