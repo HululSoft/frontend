@@ -17,7 +17,7 @@ export default function Poster() {
   const registars = [
     { id: 1, name: "عمر بدران", phone: "050-3399953" },
     { id: 2, name: "محمد (أبو عبيدة)", phone: "052-6442853" },
-    { id: 3, name: "ام طارق", phone: "052-4090001" },
+    { id: 3, name: "ام طارق", phone: "052-8029957" },
   ];
   const departureLocations = [
     "محطة باصات كافيه",
