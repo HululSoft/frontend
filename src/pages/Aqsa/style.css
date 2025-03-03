@@ -1,9 +1,9 @@
 /* Base styles */
-html, body {
+/* body {
   margin: 0;
   font-family: "Arial", sans-serif;
-  background: linear-gradient(to bottom right, #f0f9ff, #cbebff);
-}
+  background-color:#cbebff
+} */
 
 /* Layout containers */
 .mainContainer {
@@ -11,6 +11,7 @@ html, body {
   flex-direction: column;
   justify-content: center;
   align-items: center;
+  background-color:#cbebff;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }

@@ -1,5 +1,5 @@
 import React, { useState, useRef } from "react";
-import "../../style/aqsana.css";
+import "./style.css";
 import template from "./template.jpg";
 import calendarIcon from "./calendar.png";
 import timeIcon from "./clock.png";
