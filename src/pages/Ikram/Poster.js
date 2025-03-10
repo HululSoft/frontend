@@ -18,6 +18,8 @@ export default function Poster() {
     "masjid_place": "مسجد ابثان القديم",
     "cemetery_place": "مقبرة ابثان",
     "consolation_place": "المضافة",
+    "starting_consolation_time": "بعد صلاة العصر",
+    "ending_consolation_time": "",
     "other_consolation_place": "",
     "number_of_consolation_place": "3 أيام",
     "create_poster": false
@@ -79,6 +81,14 @@ export default function Poster() {
 
     if (e.target.name === "consolation_place") {
       setFormData((prev) => ({ ...prev, consolation_place: get_consolation_place(e.target.value) }));
+    }
+
+    if (e.target.name === "starting_consolation_time") {
+      setFormData((prev) => ({ ...prev, starting_consolation_time: get_consolation_starting_time(e.target.value) }));
+    }
+
+    if (e.target.name === "ending_consolation_time") {
+      setFormData((prev) => ({ ...prev, ending_consolation_time: get_consolation_ending_time(e.target.value) }));
     }
 
     if (e.target.name === "other_consolation_place") {
@@ -160,6 +170,36 @@ export default function Poster() {
       taher: "مقبرة بئر السكة - آل طاهر",
     };
     return cemeteries[value];
+  };
+
+  const get_consolation_starting_time = (value) => {
+    const times = {
+      duhur: "بعد صلاة الظهر",
+      asr: "بعد صلاة العصر",
+      maghrib: "بعد صلاة المغرب",
+      one: "من الساعة 13:00",
+      two: "من الساعة 14:00",
+      three: "من الساعة 15:00",
+      four: "من الساعة 16:00",
+      five: "من الساعة 17:00",
+    };
+    return times[value];
+  };
+
+  const get_consolation_ending_time = (value) => {
+    const times = {
+      no_limit: "",
+      maghrib: "وحتى صلاة المغرب",
+      isha: "وحتى صلاة العشاء",
+      four: "وحتى الساعة 16:00",
+      five: "وحتى الساعة 17:00",
+      six: "وحتى الساعة 18:00",
+      seven: "وحتى الساعة 19:00",
+      eight: "وحتى الساعة 20:00",
+      nine: "وحتى الساعة 21:00",
+      ten: "وحتى الساعة 22:00",
+    };
+    return times[value];
   };
 
   const get_days_number = (value) => {
@@ -436,6 +476,62 @@ export default function Poster() {
           style={{ display: formData.burial_def === "def" ? "block" : "none" }}
         >
           <div className="col-25">
+            <label htmlFor="starting_consolation_time">
+              بداية بيت العزاء
+            </label>
+          </div>
+          <div className="col-30">
+            <select
+              id="starting_consolation_time"
+              name="starting_consolation_time"
+              onChange={handleChange}
+            >
+              <option value="asr">بعد صلاة العصر</option>
+              <option value="duhur">بعد صلاة الظهر</option>
+              <option value="maghrib">بعد صلاة المغرب</option>
+              <option value="one">من الساعة 13:00</option>
+              <option value="two">من الساعة 14:00</option>
+              <option value="three">من الساعة 15:00</option>
+              <option value="four">من الساعة 16:00</option>
+              <option value="five">من الساعة 17:00</option>
+            </select>
+          </div>
+        </div>
+
+        <div
+          className="row"
+          style={{ display: formData.burial_def === "def" ? "block" : "none" }}
+        >
+          <div className="col-25">
+            <label htmlFor="ending_consolation_time">
+              نهاية بيت العزاء
+            </label>
+          </div>
+          <div className="col-30">
+            <select
+              id="ending_consolation_time"
+              name="ending_consolation_time"
+              onChange={handleChange}
+            >
+              <option value="no-limit">غير محدد</option>
+              <option value="maghrib">وحتى صلاة المغرب</option>
+              <option value="isha">وحتى صلاة العشاء</option>
+              <option value="four">وحتى الساعة 16:00</option>
+              <option value="five">وحتى الساعة 17:00</option>
+              <option value="six">وحتى الساعة 18:00</option>
+              <option value="seven">وحتى الساعة 19:00</option>
+              <option value="eight">وحتى الساعة 20:00</option>
+              <option value="nine">وحتى الساعة 21:00</option>
+              <option value="ten">وحتى الساعة 22:00</option>
+            </select>
+          </div>
+        </div>
+
+        <div
+          className="row"
+          style={{ display: formData.burial_def === "def" ? "block" : "none" }}
+        >
+          <div className="col-25">
             <label htmlFor="number_of_consolation_place">
               عدد أيام بيت العزاء
             </label>
@@ -452,29 +548,7 @@ export default function Poster() {
             </select>
           </div>
         </div>
-
-        <div
-          className="row"
-          style={{ display: formData.burial_def === "def" ? "block" : "none" }}
-        >
-          <div className="col-25">
-            <label htmlFor="starting_consolation_time">
-              بداية بيت العزاء
-            </label>
-          </div>
-          <div className="col-30">
-            <select
-              id="starting_consolation_time"
-              name="starting_consolation_time"
-              onChange={handleChange}
-            >
-              <option value="3">3</option>
-              <option value="2">2</option>
-              <option value="1">1</option>
-            </select>
-          </div>
-        </div>
-
+        
         <div className="row" style={{ textAlign: "center" }}>
           <button type="button" name="create_poster" className="Btn" onClick={handleChange}>
             إنشاء
@@ -549,8 +623,7 @@ export default function Poster() {
                   ) : (
                     <p className="consolation_place_p">
                       <label id="consolation_place">
-                        وسيكون بيت العزاء في {formData.consolation_place} بعد صلاة
-                        العصر لمدة {formData.number_of_consolation_place}
+                        وسيكون بيت العزاء في {formData.consolation_place} {formData.starting_consolation_time} {formData.ending_consolation_time} لمدة {formData.number_of_consolation_place}
                       </label>
                     </p>
                   )}
