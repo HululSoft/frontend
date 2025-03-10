@@ -1,9 +1,9 @@
 import React, { useState, useRef } from "react";
-import "./style.css";
-import template from "./template.jpg";
-import calendarIcon from "./calendar.png";
-import timeIcon from "./clock.png";
-import placeIcon from "./location-pin.png";
+import "./aqsa-style.css";
+import template from "./templates/template.jpg";
+import calendarIcon from "./icons/calendar.png";
+import timeIcon from "./icons/clock.png";
+import placeIcon from "./icons/location-pin.png";
 import html2canvas from "html2canvas";
 
 export default function Poster() {

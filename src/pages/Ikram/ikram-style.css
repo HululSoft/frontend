@@ -1,0 +1,282 @@
+@font-face {
+	font-family: hululFont;
+	src: url('./fonts/BAHIJ_THESANSARABIC-SEMIBOLD.TTF')
+		format('truetype');
+}
+
+body {
+	background-color: #c0c0c0;
+	direction: rtl;
+	font-family: hululFont;
+}
+
+#croner_bg_top_left {
+    position: absolute;
+    float: left;
+    background-image: url(./icons/corner-bg-top-left.png);
+  	background-position: top left;
+    transform: rotate(90deg);
+    background-size:200px;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 200px;
+    background-color: transparent;
+    outline: none;
+    /*border: none;*/
+    border: 1px solid red;
+    z-index: 2;
+}
+
+.container {
+	position: absolute;
+	margin-top:10px;
+	width: 80%;
+	background-color: white;
+	padding: 20px;
+	right:10%;
+	border-radius:10px;
+}
+
+.ikramContainer{
+	background-color: black;
+	padding: 10px;
+	text-align: center;
+	color: white;
+	font-size: 25px;
+}
+
+.ikramContainer div.firstChild {
+	margin: 10px;
+	border: 3px solid white;
+	padding: 20px;
+	background-image: url(./icons/corner-bg-top-left.png),
+		url(./icons/corner-bg-top-right.png),
+		url(./icons/corner-bg-bottom-right.png),
+		url(./icons/corner-bg-bottom-left.png);
+	/* 	background-position: top -13px left -6px, top -6px right -13px, bottom
+		-13px right -6px, bottom -6px left -13px; */
+	background-position: top left, top right, bottom right, bottom left;
+	background-size: 200px;
+	background-repeat: no-repeat;
+}
+
+.formTitle {
+	background-color: black;
+	background-image: url('./icons/ikram-logo.png');
+	background-repeat: no-repeat;
+	background-position: center;
+	width: 100%;
+	height: 120px;
+	border-radius:10px;
+	margin-bottom:10px;
+}
+
+.ikramTitle{
+	background-image: url('./icons/ikram-logo2.png');
+	background-repeat: no-repeat;
+	background-position: top center;
+	height: 250px;
+}
+
+/* Style inputs, select elements and textareas */
+input[type=text], select, textarea {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	font-family: hululFont;
+	font-size: 20px;
+}
+
+/* Style inputs, select elements and textareas */
+input[type=date] {
+	width: 100%;
+	padding: 12px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	font-family: hululFont;
+	font-size: 25px;
+	text-align: end;
+}
+
+/* Style inputs, select elements and textareas */
+input[type=time] {
+	width: 150px;
+	padding: 12px;
+	border: 1px solid #ccc;
+	box-sizing: border-box;
+	font-family: hululFont;
+	font-size: 20px;
+	margin-right: 20px;
+	float: right;
+}
+
+/* Style the label to display next to the inputs */
+label {
+	padding: 12px 12px 12px 12px;
+	display: inline-block;
+}
+
+.ikramTextContainer {
+	display: flex;
+	flex-direction: column;
+	justify-content: center; /* Center horizontally */
+	align-items: center;    /* Center vertically */
+}
+
+.ikramTextContainer label {
+	padding: 10px;
+	margin:0;
+}
+
+.ikramTextContainer p{
+	margin:0;
+}
+
+.ikramTextContainer .place_p{
+	font-size: 30px;
+	margin-top: -10px;
+}
+
+.ikramTextContainer .date_p{
+	font-size: 50px;
+	color: #ffd92f;
+	margin-top: -20px;
+}
+
+.ikramTextContainer .gender_p {
+	font-size: 30px;
+	margin-top: -10px;
+}
+
+.ikramTextContainer .fullname_p {
+	font-size: 60px;
+	color: #ffe083;
+	margin-top: -5px;
+}
+
+.ikramTextContainer .nickname_p{
+	font-size: 40px;
+	color: #ffe083;
+	margin-top: -20px;
+}
+
+.ikramTextContainer .burial_time_p{
+	font-size: 30px;
+	margin-top: 5px;
+}
+
+.ikramTextContainer .masjid_place_p{
+	font-size: 30px;
+ 	margin-top: -15px;
+}
+
+.ikramTextContainer .cemetry_place_p{
+	font-size: 35px;
+ 	margin-top: 5px;
+}
+
+.ikramTextContainer .consolation_place_p{
+	font-size: 30px;
+	color: #ffe083;
+	margin-top: 5px;
+}
+
+p.funeral_details {
+	font-size: 30px;
+	margin-top: 15px;
+}
+
+button {
+	position: relative;
+	background-color: #e0e0e0;
+	color: #5c5c5c;
+	border: 1px solid #757575;
+	cursor: pointer;
+	padding: 5px;
+	text-align: center;
+	font-family: hululFont;
+	font-size: 20px;
+	margin-left: 20px;
+	text-decoration: none;
+	display: inline-block;
+	transition-duration: 0.2s;
+	width: 80px;
+}
+
+button:hover {
+	background-color: #363630;
+	color: white;
+}
+
+/* Floating column for labels: 25% width */
+.col-25 {
+	float: right;
+	width: 15%;
+	margin-top: 6px;
+	text-align: center;
+	font-size: 20px;
+}
+
+.col-30 {
+	float: right;
+	width: 30%;
+	margin-top: 6px;
+} 
+
+.col-35 {
+	float: right;
+	width: 35%;
+	margin-top: 6px;
+} 
+
+.col-40 {
+	float: right;
+	width: 40%;
+	margin-top: 6px;
+}
+
+.col-50 {
+	float: right;
+	width: 50%;
+	margin-top: 6px;
+}
+
+.col-75 {
+	float: right;
+	width: 85%;
+	margin-top: 6px;
+}
+
+#burial_salatime {
+	float: right;
+	width: 50%;
+	margin-right: 10px;
+}
+
+#burial_clocktime_container {
+	display: none;
+	float: right;
+	width: 30%;
+	margin-right: -10px;
+}
+
+#other_consolation_place_container{
+	display: none;
+	margin-right: 10px;
+}
+
+/* Clear floats after the columns */
+.row:after {
+	content: "";
+	display: table;
+	clear: both;
+}
+
+.Btn{
+	padding: 10px;
+	margin-top: 20px;
+	border: 1px solid black;
+	/* border-radius: 10px; */
+	/* right: 45% */
+}
