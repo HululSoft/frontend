@@ -5,35 +5,17 @@
 }
 
 body {
-	background-color: #c0c0c0;
 	direction: rtl;
 	font-family: hululFont;
-}
-
-#croner_bg_top_left {
-    position: absolute;
-    float: left;
-    background-image: url(./icons/corner-bg-top-left.png);
-  	background-position: top left;
-    transform: rotate(90deg);
-    background-size:200px;
-    background-repeat: no-repeat;
-    height: 200px;
-    width: 200px;
-    background-color: transparent;
-    outline: none;
-    /*border: none;*/
-    border: 1px solid red;
-    z-index: 2;
 }
 
 .container {
 	position: absolute;
 	margin-top:10px;
-	width: 80%;
+	width: 90%;
+	right: 3%;
 	background-color: white;
 	padding: 20px;
-	right:10%;
 	border-radius:10px;
 }
 
@@ -279,4 +261,21 @@ button:hover {
 	border: 1px solid black;
 	/* border-radius: 10px; */
 	/* right: 45% */
+}
+
+#croner_bg_top_left {
+    position: absolute;
+    float: left;
+    background-image: url(./icons/corner-bg-top-left.png);
+  	background-position: top left;
+    transform: rotate(90deg);
+    background-size:200px;
+    background-repeat: no-repeat;
+    height: 200px;
+    width: 200px;
+    background-color: transparent;
+    outline: none;
+    /*border: none;*/
+    border: 1px solid red;
+    z-index: 2;
 }

@@ -17,7 +17,7 @@ export default function Poster() {
   const registars = [
     { id: 1, name: "عمر بدران", phone: "050-3399953" },
     { id: 2, name: "محمد (أبو عبيدة)", phone: "052-6442853" },
-    { id: 3, name: "ام طارق", phone: "052-8029957" },
+    { id: 3, name: "الأخوات", phone: "052-8029957" },
   ];
   const departureLocations = [
     "محطة باصات كافيه",
@@ -183,7 +183,7 @@ export default function Poster() {
           <label htmlFor="time">اختر ساعة الإنطلاق</label>
           <input type="time" value={selectedTime} onChange={handleTimeChange} />
         </div>
-        <button onClick={createPoster}>create poster</button>
+        <button onClick={createPoster}>إنشاء</button>
       </div>
       <div
         className="poster-container"
@@ -242,7 +242,7 @@ export default function Poster() {
           </div>
         </div>
       </div>
-      <button onClick={downloadPoster}>download poster</button>
+      <button onClick={downloadPoster}>نزل الصورة</button>
       <script src="./js/inForm.js?v=1.0.1"></script>
     </div>
   );

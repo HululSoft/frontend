@@ -399,11 +399,11 @@ export default function Poster() {
               name="masjid_place"
               onChange={handleChange}
             >
-              <option value="ibthan-old">مسجد ابثان القديم</option>
+              <option value="ibthan_old">مسجد ابثان القديم</option>
               <option value="yamma">مسجد يمة</option>
-              <option value="beer-seki">مسجد بئر السكة</option>
-              <option value="marji-s">مسجد الشافعي - المرجة الجنوبية</option>
-              <option value="marji-n">مسجد الإيمان - المرجة الشمالية</option>
+              <option value="beer_seki">مسجد بئر السكة</option>
+              <option value="marji_s">مسجد الشافعي - المرجة الجنوبية</option>
+              <option value="marji_n">مسجد الإيمان - المرجة الشمالية</option>
               <option value="taqwa">مسجد التقوى - ابثان</option>
               <option value="sd">مسجد صلاح الدين - ابثان</option>
               <option value="ashbal">مسجد الأشبال - بئر السكة</option>
@@ -427,13 +427,13 @@ export default function Poster() {
               name="cemetery_place"
               onChange={handleChange}
             >
-              <option value="ibthan-1">مقبرة ابثان</option>
-              <option value="ibthan-2">مقبرة ابثان - آل زرعي</option>
+              <option value="ibthan_1">مقبرة ابثان</option>
+              <option value="ibthan_2">مقبرة ابثان - آل زرعي</option>
               <option value="yamma">مقبرة يمة</option>
-              <option value="yamma-new">مقبرة يمة - السهل (الجديدة)</option>
-              <option value="beer-seki">مقبرة بئر السكة</option>
-              <option value="marji-s">مقبرة المرجة الجنوبية</option>
-              <option value="marji-n">مقبرة المرجة الشمالية</option>
+              <option value="yamma_new">مقبرة يمة - السهل (الجديدة)</option>
+              <option value="beer_seki">مقبرة بئر السكة</option>
+              <option value="marji_s">مقبرة المرجة الجنوبية</option>
+              <option value="marji_n">مقبرة المرجة الشمالية</option>
               <option value="taher">مقبرة بئر السكة - آل طاهر</option>
             </select>
           </div>
@@ -513,7 +513,7 @@ export default function Poster() {
               name="ending_consolation_time"
               onChange={handleChange}
             >
-              <option value="no-limit">غير محدد</option>
+              <option value="no_limit">غير محدد</option>
               <option value="maghrib">وحتى صلاة المغرب</option>
               <option value="isha">وحتى صلاة العشاء</option>
               <option value="four">وحتى الساعة 16:00</option>

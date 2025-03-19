@@ -4,7 +4,6 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  background-color:#cbebff;
   padding: 20px;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
@@ -70,12 +69,10 @@ select,
   border-radius: 8px;
 }
 
-/* Button styles */
 button {
   background-color: #009688;
   color: #fff;
-  padding: 10px 20px;
-  font-size: 1.1em;
+  font-size: 1em;
   margin-top: 15px;
   border: none;
   border-radius: 5px;
@@ -327,11 +324,6 @@ button:hover {
   .prayers label,
   .date-picker label {
     font-size: 1em;
-  }
-
-  button {
-    font-size: 1em;
-    padding: 8px 16px;
   }
 
   .calendar-icon,

@@ -12,24 +12,43 @@ export default function Home() {
     <div className="homeContainer">
       <h1 className="homeTitle">حياكم الله في صفحة حلول الرسمية</h1>
       <div className="servicesContainer">
-        <img
-          src={ikramIcon}
-          alt="Go to Ikram"
-          style={{ width: "100px", cursor: "pointer" }} // Styling
-          onClick={() => navigate("/frontend/ikram")} // Navigate to Home on Click
-        />
-        <img
-          src={aqsaIcon}
-          alt="Go to Aqsa"
-          style={{ width: "100px", cursor: "pointer" }} // Styling
-          onClick={() => navigate("/frontend/aqsana/poster")} // Navigate to Home on Click
-        />
-        <img
-          src={sdIcon}
-          alt="Go to Salah Eldin"
-          style={{ width: "100px", cursor: "pointer" }} // Styling
-          onClick={() => alert("إنتظرونا!")} // Navigate to Home on Click
-        />
+        <div
+          className="ikram_service project-card"
+          onClick={() => navigate("/frontend/ikram")}
+        >
+          <img className="project-logo" src={ikramIcon} alt="Go to Ikram" />
+          <p className="project-description">
+            تطبيق مخصص لإنشاء بوسترات نعي وإعلانات تفاصيل الجنازة
+          </p>
+        </div>
+        <div
+          className="ikram_service project-card"
+          onClick={() => navigate("/frontend/aqsana/poster")}
+        >
+          <img
+            className="project-logo"
+            src={aqsaIcon}
+            alt="Go to Aqsa"
+            onClick={() => navigate("/frontend/aqsana/poster")} // Navigate to Home on Click
+          />
+          <p className="project-description">
+            تطبيق مخصص لتصميم بوسترات الدعوة لشد الرحال إلى المسجد الأقصى
+            المبارك
+          </p>
+        </div>
+        <div
+          className="ikram_service project-card"
+          onClick={() => alert("إنتظرونا!")}
+        >
+          <img
+            className="project-logo"
+            src={sdIcon}
+            alt="Go to Salah Eldin"
+          />
+          <p className="project-description">
+            تطبيق مخصص لخدمات مركز صلاح الدين التربوي
+          </p>
+        </div>
       </div>
     </div>
   );
