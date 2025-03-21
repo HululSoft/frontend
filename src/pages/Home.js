@@ -3,7 +3,7 @@ import { useNavigate } from "react-router-dom";
 import ikramIcon from "./icons/ikram-icon.png";
 import aqsaIcon from "./icons/aqsa-icon.png";
 import sdIcon from "./icons/sd-icon.png";
-import "./style.css";
+import "./home-page-style.css";
 
 export default function Home() {
   const navigate = useNavigate();

@@ -47,14 +47,63 @@ html, body{
     max-height: 150px;
   }
   
-  .project-title {
-    font-size: 1.5em;
-    margin-bottom: 10px;
-    color: #0073e6;
-  }
-  
   .project-description {
     font-size: 1.2em;
     word-spacing: 4px;     
     color: #666;
+  }
+
+
+  @media screen and (max-width: 768px) {
+    .homeTitle{
+      font-size: x-large;
+    }
+    .servicesContainer{
+      gap: 4%;
+    }
+    .project-logo {
+      margin-bottom: 10px;
+      max-width: 100px;
+      max-height: 100px;
+    }
+    .project-description {
+      font-size: 1em;
+      word-spacing: 3px;
+    }
+  }
+  
+  @media screen and (max-width: 575px) {
+    .homeTitle{
+      font-size: large;
+    }
+    .servicesContainer{
+      gap: 3%;
+    }
+    .project-logo {
+      margin-bottom: 8px;
+      max-width: 80px;
+      max-height: 80px;
+    }
+    .project-description {
+      font-size: 0.8em;
+      word-spacing: 3px;
+    }
+  }
+  
+  @media screen and (max-width: 375px) {
+    .homeTitle{
+      font-size: medium;
+    }
+    .servicesContainer{
+      gap: 2%;
+    }
+    .project-logo {
+      margin-bottom: 5px;
+      max-width: 50px;
+      max-height: 50px;
+    }
+    .project-description {
+      font-size: 0.6em;
+      word-spacing: 1.5px;
+    }
   }
