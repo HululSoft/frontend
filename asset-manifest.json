@@ -1,16 +1,24 @@
 {
   "files": {
-    "main.css": "/frontend/static/css/main.814bbdfb.css",
-    "main.js": "/frontend/static/js/main.53cfc982.js",
+    "main.css": "/frontend/static/css/main.57bbb135.css",
+    "main.js": "/frontend/static/js/main.cf945586.js",
+    "static/media/BAHIJ_THESANSARABIC-SEMIBOLD.TTF": "/frontend/static/media/BAHIJ_THESANSARABIC-SEMIBOLD.e0eb11ed37020a33fd28.TTF",
     "static/media/template.jpg": "/frontend/static/media/template.07e6b318f3a060ca8f85.jpg",
+    "static/media/ikram-logo2.png": "/frontend/static/media/ikram-logo2.a87637776cf0a2fb003f.png",
+    "static/media/corner-bg-bottom-right.png": "/frontend/static/media/corner-bg-bottom-right.462ee1d99573446ddc44.png",
+    "static/media/corner-bg-top-left.png": "/frontend/static/media/corner-bg-top-left.8bcc5dfd4613ddb865c0.png",
+    "static/media/corner-bg-bottom-left.png": "/frontend/static/media/corner-bg-bottom-left.d3d07bd24dbdb737ff17.png",
+    "static/media/corner-bg-top-right.png": "/frontend/static/media/corner-bg-top-right.6ae267c917393044c790.png",
+    "static/media/aqsa-icon.png": "/frontend/static/media/aqsa-icon.a8f8ad8eca72e708c8ce.png",
     "static/media/clock.png": "/frontend/static/media/clock.dc550a9f52c407d30fa5.png",
+    "static/media/ikram-logo.png": "/frontend/static/media/ikram-logo.cad75d2de9166dcd75a5.png",
     "static/media/location-pin.png": "/frontend/static/media/location-pin.4b24287cb33401ab0dfb.png",
     "index.html": "/frontend/index.html",
-    "main.814bbdfb.css.map": "/frontend/static/css/main.814bbdfb.css.map",
-    "main.53cfc982.js.map": "/frontend/static/js/main.53cfc982.js.map"
+    "main.57bbb135.css.map": "/frontend/static/css/main.57bbb135.css.map",
+    "main.cf945586.js.map": "/frontend/static/js/main.cf945586.js.map"
   },
   "entrypoints": [
-    "static/css/main.814bbdfb.css",
-    "static/js/main.53cfc982.js"
+    "static/css/main.57bbb135.css",
+    "static/js/main.cf945586.js"
   ]
 }
