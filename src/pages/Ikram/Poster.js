@@ -314,7 +314,7 @@ export default function Poster() {
           <div className="col-25">
             <label htmlFor="burial_def">وقت الدفن</label>
           </div>
-          <div className="col-25">
+          <div className="col-30">
             <select
               name="burial_def"
               onChange={handleChange}
@@ -324,7 +324,7 @@ export default function Poster() {
             </select>
           </div>
           <div
-            className="col-25"
+            className="col-30"
             style={{ display: formData.burial_def === "def" ? "block" : "none" }}
           >
             <select
@@ -446,7 +446,7 @@ export default function Poster() {
           <div className="col-25">
             <label htmlFor="consolation_place">بيت العزاء</label>
           </div>
-          <div className="col-30">
+          <div className="col-50">
             <select
               id="consolation_place"
               name="consolation_place"
@@ -480,7 +480,7 @@ export default function Poster() {
               بداية بيت العزاء
             </label>
           </div>
-          <div className="col-30">
+          <div className="col-50">
             <select
               id="starting_consolation_time"
               name="starting_consolation_time"
@@ -507,7 +507,7 @@ export default function Poster() {
               نهاية بيت العزاء
             </label>
           </div>
-          <div className="col-30">
+          <div className="col-50">
             <select
               id="ending_consolation_time"
               name="ending_consolation_time"
@@ -556,7 +556,7 @@ export default function Poster() {
         </div>
       </form>
       <div className="Postercontainer"
-      style={{ display: formData.create_poster ? "block" : "none" }}
+      style={{ display: formData.create_poster ? "flex" : "none" }}
       >
         <div className="ikramContainer" id="captureArea">
           <div className="firstChild">

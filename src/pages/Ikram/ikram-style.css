@@ -19,48 +19,6 @@ body {
 	border-radius:10px;
 }
 
-.ikramContainer{
-	background-color: black;
-	padding: 10px;
-	text-align: center;
-	color: white;
-	font-size: 25px;
-}
-
-.ikramContainer div.firstChild {
-	margin: 10px;
-	border: 3px solid white;
-	padding: 20px;
-	background-image: url(./icons/corner-bg-top-left.png),
-		url(./icons/corner-bg-top-right.png),
-		url(./icons/corner-bg-bottom-right.png),
-		url(./icons/corner-bg-bottom-left.png);
-	/* 	background-position: top -13px left -6px, top -6px right -13px, bottom
-		-13px right -6px, bottom -6px left -13px; */
-	background-position: top left, top right, bottom right, bottom left;
-	background-size: 200px;
-	background-repeat: no-repeat;
-}
-
-.formTitle {
-	background-color: black;
-	background-image: url('./icons/ikram-logo.png');
-	background-repeat: no-repeat;
-	background-position: center;
-	width: 100%;
-	height: 120px;
-	border-radius:10px;
-	margin-bottom:10px;
-}
-
-.ikramTitle{
-	background-image: url('./icons/ikram-logo2.png');
-	background-repeat: no-repeat;
-	background-position: top center;
-	height: 250px;
-}
-
-/* Style inputs, select elements and textareas */
 input[type=text], select, textarea {
 	width: 100%;
 	padding: 12px;
@@ -70,7 +28,6 @@ input[type=text], select, textarea {
 	font-size: 20px;
 }
 
-/* Style inputs, select elements and textareas */
 input[type=date] {
 	width: 100%;
 	padding: 12px;
@@ -81,7 +38,6 @@ input[type=date] {
 	text-align: end;
 }
 
-/* Style inputs, select elements and textareas */
 input[type=time] {
 	width: 150px;
 	padding: 12px;
@@ -91,6 +47,49 @@ input[type=time] {
 	font-size: 20px;
 	margin-right: 20px;
 	float: right;
+}
+
+.Btn{
+	padding: 10px;
+	margin: 20px;
+	border: 1px solid black;
+}
+
+.Postercontainer{
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+
+.ikramContainer{
+	background-color: black;
+	padding: 10px;
+	text-align: center;
+	color: white;
+	font-size: 25px;
+	min-width: 850px;
+	min-height: 850px;
+}
+
+.ikramContainer div.firstChild {
+	margin: 10px;
+	border: 3px solid white;
+	padding: 20px;
+	background-image: url(./icons/corner-bg-top-left.png),
+		url(./icons/corner-bg-top-right.png),
+		url(./icons/corner-bg-bottom-right.png),
+		url(./icons/corner-bg-bottom-left.png);
+	background-position: top left, top right, bottom right, bottom left;
+	background-size: 200px;
+	background-repeat: no-repeat;
+}
+
+.ikramTitle{
+	margin-top: 50px;
+	background-image: url('./icons/ikram-logo2.png');
+	background-repeat: no-repeat;
+	background-position: top center;
+	height: 250px;
 }
 
 /* Style the label to display next to the inputs */
@@ -162,6 +161,7 @@ label {
 	font-size: 30px;
 	color: #ffe083;
 	margin-top: 5px;
+	width: 90%;
 }
 
 p.funeral_details {
@@ -255,14 +255,6 @@ button:hover {
 	clear: both;
 }
 
-.Btn{
-	padding: 10px;
-	margin-top: 20px;
-	border: 1px solid black;
-	/* border-radius: 10px; */
-	/* right: 45% */
-}
-
 #croner_bg_top_left {
     position: absolute;
     float: left;
@@ -275,19 +267,54 @@ button:hover {
     width: 200px;
     background-color: transparent;
     outline: none;
-    /*border: none;*/
     border: 1px solid red;
     z-index: 2;
 }
 
 @media screen and (max-width: 768px) {
-
+	.container{
+		width: 85%;
+	}
+	.col-25, input[type=text], select, textarea, input[type=time] {
+		font-size: 15px;
+	}
+	input[type=date] {
+		font-size: 20px;
+	}
+	button {
+		font-size: 15px;
+		width: 70px;
+	}
   }
   
   @media screen and (max-width: 575px) {
-
+	.container{
+		width: 80%;
+	}
+	.col-25, input[type=text], select, textarea, input[type=time] {
+		font-size: 12px;
+	}
+	input[type=date] {
+		font-size: 18px;
+	}
+	button {
+		font-size: 10px;
+		width: 65px;
+	}
   }
   
-  @media screen and (max-width: 375px) {
-
+  @media screen and (max-width: 390px) {
+	.container{
+		width: 75%;
+	}
+	.col-25, input[type=text], select, textarea, input[type=time] {
+		font-size: 8px;
+	}
+	input[type=date] {
+		font-size: 10px;
+	}
+	button {
+		font-size: 8px;
+		width: 60px;
+	}
   }
