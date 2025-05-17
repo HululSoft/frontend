@@ -92,11 +92,9 @@ button:hover {
 /* Poster styles */
 .poster-container {
   position: relative;
-  width: 100%;
-  max-width: 650px;
+  min-width: 650px;
+  min-height: 790px;
   height: auto;
-  aspect-ratio: 650 / 790;
-  overflow: hidden;
 }
 
 .poster-background {
