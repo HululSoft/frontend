@@ -92,9 +92,8 @@ button:hover {
 /* Poster styles */
 .poster-container {
   position: relative;
-  min-width: 650px;
-  min-height: 650px;
-  height: auto;
+  width: 650px;
+  height: 700px;
 }
 
 .poster-background {
@@ -273,7 +272,7 @@ button:hover {
     padding: 8px 16px;
   }
 
-  .calendar-icon,
+  /* .calendar-icon,
   .clock-icon,
   .place-icon {
     width: 30px;
@@ -297,7 +296,7 @@ button:hover {
   .registars-container {
     font-size: 15px;
     gap: 9%;
-  }
+  } */
 }
 
 @media screen and (max-width: 375px) {
@@ -325,7 +324,7 @@ button:hover {
     font-size: 1em;
   }
 
-  .calendar-icon,
+  /* .calendar-icon,
   .clock-icon,
   .place-icon {
     width: 20px;
@@ -352,5 +351,5 @@ button:hover {
   .registars-container {
     font-size: 13px;
     gap: 5%;
-  }
+  } */
 }
