@@ -18,9 +18,10 @@ export default function Poster() {
     "masjid_place": "مسجد ابثان القديم",
     "cemetery_place": "مقبرة ابثان",
     "consolation_place": "المضافة",
+    "other_consolation_place": "",
+    "is_their_consolation": "no",
     "starting_consolation_time": "بعد صلاة العصر",
     "ending_consolation_time": "",
-    "other_consolation_place": "",
     "number_of_consolation_place": "3 أيام",
     "create_poster": false
   });
@@ -79,8 +80,15 @@ export default function Poster() {
       setFormData((prev) => ({ ...prev, cemetery_place: get_cemetry_place(e.target.value) }));
     }
 
+    if (e.target.name === "consolation") {
+      setFormData((prev) => ({ ...prev, is_their_consolation: get_consolation_status(e.target.value) }));
+    }
     if (e.target.name === "consolation_place") {
       setFormData((prev) => ({ ...prev, consolation_place: get_consolation_place(e.target.value) }));
+    }
+
+    if (e.target.name === "other_consolation_place") {
+      setFormData((prev) => ({ ...prev, other_consolation_place: e.target.value }));
     }
 
     if (e.target.name === "starting_consolation_time") {
@@ -89,10 +97,6 @@ export default function Poster() {
 
     if (e.target.name === "ending_consolation_time") {
       setFormData((prev) => ({ ...prev, ending_consolation_time: get_consolation_ending_time(e.target.value) }));
-    }
-
-    if (e.target.name === "other_consolation_place") {
-      setFormData((prev) => ({ ...prev, other_consolation_place: e.target.value }));
     }
 
     if (e.target.name === "number_of_consolation_place") {
@@ -209,6 +213,10 @@ export default function Poster() {
       1: "يوم واحد",
     };
     return days[value];
+  };
+
+  const get_consolation_status = (value) => {
+    return value === "no_consolation" ? "no" : "yes";
   };
 
   const get_consolation_place = (value) => {
@@ -439,12 +447,32 @@ export default function Poster() {
           </div>
         </div>
 
+        {/* العزاء */}
         <div
           className="row"
           style={{ display: formData.burial_def === "def" ? "block" : "none" }}
         >
           <div className="col-25">
-            <label htmlFor="consolation_place">بيت العزاء</label>
+            <label htmlFor="consolation">بيت العزاء</label>
+          </div>
+          <div className="col-50">
+            <select
+              id="consolation"
+              name="consolation"
+              onChange={handleChange}
+            >
+              <option value="no_consolation">لا يوجد بيت عزاء</option>
+              <option value="yes_consolation">يوجد بيت عزاء</option>
+            </select>
+          </div>
+        </div>
+
+        <div
+          className="row"
+          style={{ display: formData.is_their_consolation === "no" ? "none" : "block" }}
+        >
+          <div className="col-25">
+            <label htmlFor="consolation_place">مكان بيت العزاء</label>
           </div>
           <div className="col-50">
             <select
@@ -453,7 +481,6 @@ export default function Poster() {
               onChange={handleChange}
             >
               <option value="madafah">المضافة</option>
-              <option value="no-consolation">لا يوجد بيت عزاء</option>
               <option value="other">مكان آخر..</option>
             </select>
           </div>
@@ -473,7 +500,7 @@ export default function Poster() {
 
         <div
           className="row"
-          style={{ display: formData.burial_def === "def" ? "block" : "none" }}
+          style={{ display: formData.is_their_consolation === "no" ? "none" : "block" }}
         >
           <div className="col-25">
             <label htmlFor="starting_consolation_time">
@@ -500,7 +527,7 @@ export default function Poster() {
 
         <div
           className="row"
-          style={{ display: formData.burial_def === "def" ? "block" : "none" }}
+          style={{ display: formData.is_their_consolation === "no" ? "none" : "block" }}
         >
           <div className="col-25">
             <label htmlFor="ending_consolation_time">
@@ -529,7 +556,7 @@ export default function Poster() {
 
         <div
           className="row"
-          style={{ display: formData.burial_def === "def" ? "block" : "none" }}
+          style={{ display: formData.is_their_consolation === "no" ? "none" : "block" }}
         >
           <div className="col-25">
             <label htmlFor="number_of_consolation_place">
@@ -616,9 +643,15 @@ export default function Poster() {
                       <label id="cemetry_place">في {formData.cemetery_place}</label>
                     </p>
                   )}
-                  {formData.consolation_place === "no-consolation" ? (
+                  {formData.is_their_consolation === "no" ? (
                     <p className="consolation_place_p">
-                      <label id="consolation_place">لا يوجد بيت عزاء</label>
+                      <label id="no_consolation_place">لا يوجد بيت عزاء</label>
+                    </p>
+                  ) : formData.consolation_place === "other" ? (
+                    <p className="consolation_place_p">
+                      <label id="consolation_place">
+                        وسيكون بيت العزاء في {formData.other_consolation_place} {formData.starting_consolation_time} {formData.ending_consolation_time} لمدة {formData.number_of_consolation_place}
+                      </label>
                     </p>
                   ) : (
                     <p className="consolation_place_p">
@@ -626,7 +659,8 @@ export default function Poster() {
                         وسيكون بيت العزاء في {formData.consolation_place} {formData.starting_consolation_time} {formData.ending_consolation_time} لمدة {formData.number_of_consolation_place}
                       </label>
                     </p>
-                  )}
+                  )
+                }
                 </>
               )}
               <br />
