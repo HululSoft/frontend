@@ -1,6 +1,6 @@
 {
   "files": {
-    "main.css": "/frontend/static/css/main.4dd5b06e.css",
+    "main.css": "/frontend/static/css/main.9b7513bb.css",
     "main.js": "/frontend/static/js/main.9038336d.js",
     "static/media/BAHIJ_THESANSARABIC-SEMIBOLD.TTF": "/frontend/static/media/BAHIJ_THESANSARABIC-SEMIBOLD.e0eb11ed37020a33fd28.TTF",
     "static/media/template.jpg": "/frontend/static/media/template.07e6b318f3a060ca8f85.jpg",
@@ -13,11 +13,11 @@
     "static/media/clock.png": "/frontend/static/media/clock.dc550a9f52c407d30fa5.png",
     "static/media/location-pin.png": "/frontend/static/media/location-pin.4b24287cb33401ab0dfb.png",
     "index.html": "/frontend/index.html",
-    "main.4dd5b06e.css.map": "/frontend/static/css/main.4dd5b06e.css.map",
+    "main.9b7513bb.css.map": "/frontend/static/css/main.9b7513bb.css.map",
     "main.9038336d.js.map": "/frontend/static/js/main.9038336d.js.map"
   },
   "entrypoints": [
-    "static/css/main.4dd5b06e.css",
+    "static/css/main.9b7513bb.css",
     "static/js/main.9038336d.js"
   ]
 }
