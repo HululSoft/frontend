@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/frontend/static/css/main.9b7513bb.css",
-    "main.js": "/frontend/static/js/main.9038336d.js",
+    "main.js": "/frontend/static/js/main.f0170b50.js",
     "static/media/BAHIJ_THESANSARABIC-SEMIBOLD.TTF": "/frontend/static/media/BAHIJ_THESANSARABIC-SEMIBOLD.e0eb11ed37020a33fd28.TTF",
     "static/media/template.jpg": "/frontend/static/media/template.07e6b318f3a060ca8f85.jpg",
     "static/media/ikram-logo2.png": "/frontend/static/media/ikram-logo2.a87637776cf0a2fb003f.png",
@@ -14,10 +14,10 @@
     "static/media/location-pin.png": "/frontend/static/media/location-pin.4b24287cb33401ab0dfb.png",
     "index.html": "/frontend/index.html",
     "main.9b7513bb.css.map": "/frontend/static/css/main.9b7513bb.css.map",
-    "main.9038336d.js.map": "/frontend/static/js/main.9038336d.js.map"
+    "main.f0170b50.js.map": "/frontend/static/js/main.f0170b50.js.map"
   },
   "entrypoints": [
     "static/css/main.9b7513bb.css",
-    "static/js/main.9038336d.js"
+    "static/js/main.f0170b50.js"
   ]
 }
